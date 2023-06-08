@@ -27,7 +27,7 @@ public class TC_MyAccountPageTest extends BaseClass{
 		acp.SelectCustGender();
 		acp.CustFirstName("Ganesh");
 		acp.CustLastName("Chavan");
-		acp.CustEmail("ganesh23@gmail.com");
+		acp.CustEmail("ganesh213@gmail.com");
 		acp.Custpassword("ganesh@123");
 		acp.SubmitButton();
 		
