@@ -8,7 +8,7 @@ import java.util.Properties;
 public class ReadConfigProp {
 
 	Properties properties;
-	String path = "E:\\Eclips 2023\\MyStore\\Config.Properties\\Config.Properties";
+	String path = "E:\\Eclips 2023\\GitProjectDemoX Person\\Config.Properties\\Config.Properties";
 
 	public ReadConfigProp() {
 		properties = new Properties();

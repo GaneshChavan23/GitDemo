@@ -1,7 +1,10 @@
 package com.mystore.testcases;
 
+import java.io.FileNotFoundException;
 import java.time.Duration;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
@@ -16,29 +19,22 @@ public class BaseClass {
 	String url=readconf.geturl();
 	String broswer=readconf.getBrowser();
 	public static WebDriver driver;
+	public static Logger logger;
 	@BeforeClass
-	public void SetUp()
-	{
-		switch (broswer.toLowerCase()) 
-		{
-		case "chrome":
-			WebDriverManager.chromedriver().setup();
-			driver=new ChromeDriver();
-			driver.manage().window().maximize();
-			break;
-
-		default:
-			driver=null;
-			break;
-		}
-		//implicit wait
+	public void OpenBrowser() throws FileNotFoundException {
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+		logger = LogManager.getLogger("MyStore1");
+		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get(url);
+		logger.info("Browser Open");
 	}
+
 	@AfterClass
-	public void teardown() throws InterruptedException
-	{
-		Thread.sleep(8000);
-		driver.close();
+	public void tearDown() {
+		// driver.close();
+		// driver.quit();
+		logger.info("Browser close");
 	}
 }

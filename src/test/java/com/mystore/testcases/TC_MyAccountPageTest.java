@@ -19,15 +19,18 @@ public class TC_MyAccountPageTest extends BaseClass{
 		indexPage index=new indexPage(driver);
 		index.ClickOnSignIn();
 		
+		logger.info("ClickOnSignIn");
+		
 		MyAccount pg=new MyAccount(driver);
-		pg.CreateEmailid("abc15@gmail.com");
+		pg.CreateEmailid("abc173@gmail.com");
+		logger.info("create email id");
 		pg.ClickSubmitEmailid();
 		
 		AccountCreationPage acp=new AccountCreationPage(driver);
 		acp.SelectCustGender();
 		acp.CustFirstName("Ganesh");
 		acp.CustLastName("Chavan");
-		acp.CustEmail("ganesh213@gmail.com");
+		acp.CustEmail("ganesh219@gmail.com");
 		acp.Custpassword("ganesh@123");
 		acp.SubmitButton();
 		

@@ -1,10 +1,20 @@
 package abdce;
 
-public class x {
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-System.out.println("helllo ganesh");
+import com.mystore.testcases.BaseClass;
+
+public class x extends BaseClass{
+	@Test
+	public void Skipped()
+	{
+	 String s="a";
+	 
+	 String b="a";
+		Assert.assertTrue(false);
+		logger.info("failed");
+		
 	}
 
 }
